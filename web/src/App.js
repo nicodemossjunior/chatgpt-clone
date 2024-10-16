@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       <SideMenu></SideMenu>
       
-      <section>
+      <section className='chatbox'>
 
         <div className='chat-log'>
           {chatlog.map((message, index)=> (
