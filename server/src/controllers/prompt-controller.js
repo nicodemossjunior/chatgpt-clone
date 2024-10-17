@@ -3,21 +3,30 @@ const openai = require("../config/openai")
 
 module.exports = {
     async sendText(req, res) {
+
+        console.log("-- inicio sendText --");
+        console.log(req.body);
+        
+
         const openaiAPI = openai.configuration()
         const inputModel = new inputPrompt(req.body)
 
         try {
-            const response = await openaiAPI.completions.create(
+            const response = await openaiAPI.createChatCompletion(
                 openai.textCompletion(inputModel)
-            ).asResponse()
+            )
+
             return res.status(200).json({
                 sucess:true,
-                data: response.choices[0].text
+                data: response.data.choices[0].text
             })
         } catch (error) {
+            console.log(error)
             return res.status(400).json({
                 sucess:false,
-                error: error.response ? error.response : "there was an issue on the server"
+                error: error.response 
+                ? error.response.data 
+                : "there was an issue on the server"
             })
         }
     }

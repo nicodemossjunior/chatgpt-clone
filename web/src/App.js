@@ -5,7 +5,7 @@ import './styles/reset.css';
 
 import { makeRequest } from './api/api';
 import { SideMenu } from './components/SideMenu/SideMenu';
-import { ChatMesssage } from './api/ChatMessage/ChatMessage';
+import { ChatMessage } from './components/ChatMessage/ChatMessage';
 
 function App() {
 
@@ -44,7 +44,7 @@ function App() {
 
         <div className='chat-log'>
           {chatlog.map((message, index)=> (
-              <ChatMesssage
+              <ChatMessage
                 key={index}
                 message={message}
               />
