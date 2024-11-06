@@ -1,15 +1,18 @@
 //import OpenAI from "openai";
-const { Configuration, OpenAIApi } = require("openai")
+//const { Configuration, OpenAIApi } = require("openai")
+const { OpenAI } = require("openai")
 
 
 module.exports = class openai{
 
     static configuration(){
-        const configuration = new Configuration({
-            apiKey: process.env.OPENAI_API_KEY,
-        })
+        // const configuration = new Configuration({
+        //     apiKey: process.env.OPENAI_API_KEY,
+        // })
 
-        return new OpenAIApi(configuration)
+        return new OpenAI({
+            apiKey: process.env.OPENAI_API_KEY
+        });
     }
 
     static async textCompletion({prompt}){
