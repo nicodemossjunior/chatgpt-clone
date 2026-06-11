@@ -316,7 +316,7 @@ ISC
 
 ## 👨‍💻 Autor
 
-**Nicodemus Souza Junior** - [@nicodemossjunior](https://github.com/nicodemossjunior)
+**Nicodemos Lourenço de Souza Júnior** - [@nicodemossjunior](https://github.com/nicodemossjunior)
 
 ---
 
